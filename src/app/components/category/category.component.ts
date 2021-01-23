@@ -9,6 +9,7 @@ import { ImagesService } from 'src/app/services/images/images.service';
 })
 export class CategoryComponent implements OnInit {
 
+  category : string;
   allProds : Array<any>;
   categoryProds : Array<any>;
 
@@ -18,11 +19,12 @@ export class CategoryComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       (params) => 
       {
+        this.category = params.name;
         this.imageService.GetImages().subscribe(
           (data) => 
           { 
             this.allProds = data;
-            this.categoryProds = this.allProds.filter(x => { return x.category.toLocaleLowerCase() == params.name.toLocaleLowerCase() });
+            this.categoryProds = this.allProds.filter(x => { return x.category.toLocaleLowerCase() == this.category.toLocaleLowerCase() });
         })
       })
 
