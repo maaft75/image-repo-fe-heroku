@@ -21,6 +21,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PostimageComponent } from './components/postimage/postimage.component';
 import { SearchComponent } from './components/search/search.component';
 import { ImagedetailsComponent } from './components/imagedetails/imagedetails.component';
+import { CategoryComponent } from './components/category/category.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { ImagedetailsComponent } from './components/imagedetails/imagedetails.co
     DashboardComponent,
     PostimageComponent,
     SearchComponent,
-    ImagedetailsComponent
+    ImagedetailsComponent,
+    CategoryComponent,
+    CategoriesComponent
   ],
   imports: [
     FormsModule,

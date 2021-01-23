@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
 import { LoginComponent } from '../components/login/login.component';
 import { SearchComponent } from '../components/search/search.component';
+import { CategoryComponent } from '../components/category/category.component';
 import { DashboardComponent } from '../components/dashboard/dashboard.component';
 import { PostimageComponent } from '../components/postimage/postimage.component';
+import { CategoriesComponent } from '../components/categories/categories.component';
 import { RegistrationComponent } from '../components/registration/registration.component';
 import { ImagedetailsComponent } from '../components/imagedetails/imagedetails.component';
 
@@ -14,6 +16,9 @@ export const appRoutes : Routes = [
   {path:'login', component : LoginComponent},
   {path:'search', component: SearchComponent},
   {path:'addimage', component: PostimageComponent},
+  {path:'category', component: CategoriesComponent, children : [
+    { path:':name', component: CategoryComponent}
+  ]},
   {path:'dashboard', component: DashboardComponent},
   {path:'registration', component: RegistrationComponent},
   {path:'imagedetails/:id', component: ImagedetailsComponent},
